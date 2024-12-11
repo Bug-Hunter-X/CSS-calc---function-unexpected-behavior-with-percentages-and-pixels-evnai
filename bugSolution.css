@@ -1,0 +1,11 @@
+Several strategies can mitigate this issue:
+
+1. **Avoid mixed units:** If possible, stick to a single unit type within the `calc()` function. For example, use `width: calc(50vw - 10px);` where `vw` represents viewport width units which is a more stable reference.  This avoids the calculation being dependent on parent element's percentage-based width which is subject to change.
+
+2. **Use viewport units:** Viewport units (like `vw`, `vh`, `vmin`, `vmax`) provide a more stable and predictable base for calculations since they're based on the viewport size.
+
+3. **Explicitly set parent width:** If the parent element's width is causing the issue, you might need to explicitly set its width (e.g., using pixels or percentage) to ensure a consistent calculation context for the child element. 
+
+4. **JavaScript solution (less preferred):** As a last resort, you could use JavaScript to calculate the width dynamically and apply it via `style.width`.  However, this adds complexity and might not be the most efficient approach. 
+
+The `bugSolution.css` file demonstrates the use of viewport units.
